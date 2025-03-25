@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class EmployeeServiceImpTest {
 
 
-    private static EmployeeService employeeService = new EmployeeServiceImp();
+    private static EmployeeService employeeService;
     String firstName;
     String secondName;
     Integer salary;
@@ -26,6 +26,7 @@ public class EmployeeServiceImpTest {
         secondName = "asd";
         salary = 1000;
         department = 1;
+        employeeService = new EmployeeServiceImp();
     }
 
     @Test
@@ -41,12 +42,6 @@ public class EmployeeServiceImpTest {
         }
         assertThrows(EmployeeStorageIsFullException.class,
                 () -> employeeService.addEmpl(firstName + "m", secondName, department, salary));
-
-
-        employeeService.popEmpl(firstName, secondName, department, salary);
-        for (int i = 1; i < 1000; ++i) {
-            employeeService.popEmpl(firstName + i, secondName, department, salary);
-        }
     }
 
     @Test

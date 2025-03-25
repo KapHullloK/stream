@@ -9,4 +9,5 @@ public interface EmployeeService {
 
     Employee findEmpl(String firstName, String lastName, Integer department, Integer salary);
 
+    List<Employee> getDbEmployees();
 }

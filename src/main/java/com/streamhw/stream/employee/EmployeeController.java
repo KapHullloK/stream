@@ -43,6 +43,6 @@ public class EmployeeController {
 
     @GetMapping(path = "/all")
     public List<Employee> getAllEmployees() {
-        return EmployeeServiceImp.getDb_employees();
+        return employeeService.getDbEmployees();
     }
 }
