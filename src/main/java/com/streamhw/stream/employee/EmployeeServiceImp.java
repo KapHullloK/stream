@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImp implements EmployeeService {
-    private static List<Employee> db_employees = new ArrayList<>();
+    private final List<Employee> db_employees = new ArrayList<>();
     private int max_employees = 1000;
 
     @Override
@@ -50,7 +50,7 @@ public class EmployeeServiceImp implements EmployeeService {
         throw new EmployeeNotFoundException("Employee not found");
     }
 
-    public static List<Employee> getDb_employees() {
+    public List<Employee> getDbEmployees() {
         return db_employees;
     }
 }
